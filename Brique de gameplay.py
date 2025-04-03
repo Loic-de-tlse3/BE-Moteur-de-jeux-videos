@@ -1,25 +1,16 @@
 import pygame
-from arme import Arme
+from objets import *
+from generateur import Generateur
 import random
-
-bouton = "Projet BE images/Bouton.png"
-Melee1 = "Projet BE images/knife.png"
-Melee2 = "Projet BE images/sword.png"
-Melee3 = "Projet BE images/spears.png"
-Distance1 = "Projet BE images/gun.png"
-Distance2 = "Projet BE images/rifle.png"
-Distance3 = "Projet BE images/space-gun.png"
-
-ListeArmes = [Melee1, Melee2, Melee3, Distance1, Distance2, Distance3]
-ListeArmesBasique = [Melee1, Distance1]
 
 class Game:
     def __init__(self, screen):
         self.screen = screen
         self.running = True
         self.clock = pygame.time.Clock()
-        self.arme = Arme(150,200,random.choice(ListeArmesBasique))
-        self.arme1 = Arme(150*3,200,random.choice(ListeArmesBasique))
+        self.listeObjets = []
+        self.generateur = Generateur()
+        self.listeObjets.append(self.generateur)
 
     def handling_events(self):
         for event in pygame.event.get():
@@ -27,7 +18,11 @@ class Game:
                 self.running = False
 
             if event.type == pygame.MOUSEBUTTONDOWN:
-                self.arme.move()
+                if event.button == 1:
+                    for objet in self.listeObjets:
+                        if objet.rect.collidepoint(event.pos) and isinstance(objet, Generateur):
+                            print("création objet")
+                            self.generateur.creation_objet(self.listeObjets)
 
     def update(self):
         pass
@@ -40,9 +35,9 @@ class Game:
 
 
     def display(self):
-        screen.blit(arriere_plan,(0,0))
-        self.arme.draw(self.screen)
-        self.arme1.draw(self.screen)
+        self.screen.blit(arriere_plan, (0, 0))
+        for objet in self.listeObjets:
+            self.screen.blit(objet.apparence, objet.rect)
         pygame.display.flip()
 
     def run(self):
@@ -55,7 +50,7 @@ class Game:
 
 pygame.init()
 screen =  pygame.display.set_mode((1224, 750)) #Initialisation de la taille de la fenêtre (X px * Y px)
-arriere_plan = pygame.image.load("Cadre.png").convert()
+arriere_plan = pygame.image.load('../Projet BE images/Cadre.png').convert()
 game = Game(screen)
 game.run()
 
