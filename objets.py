@@ -4,7 +4,7 @@ from sys import exit
 from enum import Enum
 from random import randint
 
-IMAGE_TAILLE = 105
+IMAGE_TAILLE = 128
 
 class Type(Enum):
     DISTANT = 1

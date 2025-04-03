@@ -1,6 +1,6 @@
 import pygame
 from objets import *
-from generateur import Generateur
+from generateur import *
 
 class Game:
     def __init__(self, screen):
@@ -35,10 +35,21 @@ class Game:
 
     def display(self):
         self.screen.blit(arriere_plan, (0, 0))
+        self.ajout_cadre_null()
         for objet in self.listeObjets:
             self.screen.blit(objet.apparence, objet.rect)
             self.screen.blit(objet.cadre, objet.rectCadre)
         pygame.display.flip()
+
+    def ajout_cadre_null(self):
+        x = X_INITIAL_CADRE
+        y = Y_INITIAL_CADRE
+        for i in range(NB_ITEM_MAX):
+            self.screen.blit(cadre_null, (x, y))
+            x += DISTANCE_OBJET
+            if (i+1) % NB_ITEM_LIGNE == 0:
+                x = X_INITIAL_CADRE
+                y = y + DISTANCE_OBJET
 
     def run(self):
         while self.running:
@@ -51,6 +62,7 @@ class Game:
 pygame.init()
 screen =  pygame.display.set_mode((1224, 750)) #Initialisation de la taille de la fenêtre (X px * Y px)
 arriere_plan = pygame.image.load('../Projet BE images/Cadre.png').convert()
+cadre_null = pygame.image.load('../Projet BE images/Cadre null.png').convert_alpha()
 game = Game(screen)
 game.run()
 
