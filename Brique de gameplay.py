@@ -1,7 +1,6 @@
 import pygame
 from objets import *
 from generateur import Generateur
-import random
 
 class Game:
     def __init__(self, screen):
@@ -38,6 +37,7 @@ class Game:
         self.screen.blit(arriere_plan, (0, 0))
         for objet in self.listeObjets:
             self.screen.blit(objet.apparence, objet.rect)
+            self.screen.blit(objet.cadre, objet.rectCadre)
         pygame.display.flip()
 
     def run(self):

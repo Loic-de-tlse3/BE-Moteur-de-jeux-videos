@@ -26,6 +26,8 @@ class Objet(pygame.sprite.Sprite):
         self.rect.topleft = (pos_x, pos_y)
         self.rect.height = IMAGE_TAILLE
         self.rect.width = IMAGE_TAILLE
+        self.rectCadre = self.cadre.get_rect()
+        self.rectCadre.center = (self.pos_x+(IMAGE_TAILLE/2), self.pos_y+(IMAGE_TAILLE/2))
 
     def majApparence(self):
         if self.type == Type.DISTANT:
@@ -34,13 +36,20 @@ class Objet(pygame.sprite.Sprite):
             self.image1 = '../Projet BE images/gun.png'
             self.image2 = '../Projet BE images/rifle.png'
             self.image3 = '../Projet BE images/space-gun.png'
+            self.cadre1 = '../Projet BE images/Cadre nv1.png'
+            self.cadre2 = '../Projet BE images/Cadre nv2.png'
+            self.cadre3 = '../Projet BE images/Cadre nv3.png'
         else:
             #TODO
             print("Mise à jour du sprite pour une arme càc")
             self.image1 = '../Projet BE images/knife.png'
             self.image2 = '../Projet BE images/sword.png'
             self.image3 = '../Projet BE images/spears.png'
+        self.cadre1 = '../Projet BE images/Cadre nv1.png'
+        self.cadre2 = '../Projet BE images/Cadre nv2.png'
+        self.cadre3 = '../Projet BE images/Cadre nv3.png'
         self.apparence = pygame.image.load(self.image1).convert_alpha()
+        self.cadre = pygame.image.load(self.cadre1).convert_alpha()
 
     def getType(self):
         return self.type
@@ -74,6 +83,8 @@ class Objet(pygame.sprite.Sprite):
             self.niveau += 1
             objet.destruction(objet, liste_objet)
             if self.niveau == 2:
-                self.apparence = pygame.image.load(self.image2).convert()
+                self.apparence = pygame.image.load(self.image2).convert_alpha()
+                self.cadre = pygame.image.load(self.cadre2).convert_alpha
             else:
-                self.apparence = pygame.image.load(self.image3).convert()
+                self.apparence = pygame.image.load(self.image3).convert_alpha()
+                self.apparence = pygame.image.load(self.cadre3).convert_alpha()

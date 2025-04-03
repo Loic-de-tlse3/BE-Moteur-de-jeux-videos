@@ -2,11 +2,11 @@ import pygame
 from pygame.locals import *
 from objets import *
 
-X_INITIAL = 64
-Y_INITIAL = 100
-DISTANCE_OBJET = 160
-NB_ITEM_MAX = 28
-NB_ITEM_LIGNE = 7
+X_INITIAL = 96
+Y_INITIAL = 150
+DISTANCE_OBJET = 175
+NB_ITEM_MAX = 18
+NB_ITEM_LIGNE = 6
 
 class Generateur(pygame.sprite.Sprite):
 
@@ -23,6 +23,10 @@ class Generateur(pygame.sprite.Sprite):
         self.rect.topleft = (self.pos_x, self.pos_y)
         self.rect.height = IMAGE_TAILLE
         self.rect.width = IMAGE_TAILLE
+        self.cadre = pygame.image.load('../Projet BE images/Cadre null.png').convert_alpha()
+        self.rect.width = IMAGE_TAILLE
+        self.rectCadre = self.cadre.get_rect()
+        self.rectCadre.center = (self.pos_x+(IMAGE_TAILLE/2), self.pos_y+(IMAGE_TAILLE/2))
 
     def creation_objet(self, listeObjets: list) -> None:
         nb_item = listeObjets.__len__()
