@@ -1,0 +1,39 @@
+.. Merge Game documentation master file
+
+Welcome to Merge Game's documentation!
+======================================
+
+Contents :
+
+.. toctree::
+   :maxdepth: 2
+   :caption:
+   :glob:
+
+Modules
+-------
+
+.. automodule:: merge_game_main
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+.. automodule:: utils2.game
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+.. automodule:: utils2.generateur
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+.. automodule:: utils2.objets
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+.. automodule:: pygame
+   :members:
+   :undoc-members:
+   :show-inheritance:

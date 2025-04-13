@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+
+<html lang="fr" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Welcome to Merge Game’s documentation! &#8212; Documentation Merge Game 2.0</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=5ecbeea2" />
+    <link rel="stylesheet" type="text/css" href="_static/basic.css?v=b08954a9" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=27fed22d" />
+    <script src="_static/documentation_options.js?v=e8570148"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/translations.js?v=e6b791cb"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Recherche" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="welcome-to-merge-game-s-documentation">
+<h1>Welcome to Merge Game’s documentation!<a class="headerlink" href="#welcome-to-merge-game-s-documentation" title="Lien vers cette rubrique">¶</a></h1>
+<p>Contents :</p>
+<section id="module-merge_game_main">
+<span id="modules"></span><h2>Modules<a class="headerlink" href="#module-merge_game_main" title="Lien vers cette rubrique">¶</a></h2>
+<p>Fichier principal du jeu appelant la routine de jeu.</p>
+<p id="module-utils2.game">Module game implémentant la classe Game, ses attributs et méthodes pour le fonctionnement du jeu.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="utils2.game.Game">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">utils2.game.</span></span><span class="sig-name descname"><span class="pre">Game</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">screen</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">background</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cadre</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#utils2.game.Game" title="Lien vers cette définition">¶</a></dt>
+<dd><p>Bases : <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Classe principale du jeu gérant la boucle de jeu, les événements et l’affichage.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="utils2.game.Game.BLACK">
+<span class="sig-name descname"><span class="pre">BLACK</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">(0,</span> <span class="pre">0,</span> <span class="pre">0)</span></em><a class="headerlink" href="#utils2.game.Game.BLACK" title="Lien vers cette définition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="utils2.game.Game.display">
+<span class="sig-name descname"><span class="pre">display</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#utils2.game.Game.display" title="Lien vers cette définition">¶</a></dt>
+<dd><p>Affiche tous les éléments du jeu à l’écran.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="utils2.game.Game.handling_events">
+<span class="sig-name descname"><span class="pre">handling_events</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#utils2.game.Game.handling_events" title="Lien vers cette définition">¶</a></dt>
+<dd><p>Gère les événements utilisateur (clavier, souris, etc.).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="utils2.game.Game.interrupt">
+<span class="sig-name descname"><span class="pre">interrupt</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#utils2.game.Game.interrupt" title="Lien vers cette définition">¶</a></dt>
+<dd><p>Efface l’écran en préparation au rendu de la frame suivante.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="utils2.game.Game.run">
+<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#utils2.game.Game.run" title="Lien vers cette définition">¶</a></dt>
+<dd><p>Démarre et gère la boucle principale du jeu.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="utils2.game.Game.score">
+<span class="sig-name descname"><span class="pre">score</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#utils2.game.Game.score" title="Lien vers cette définition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="utils2.game.Game.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#utils2.game.Game.update" title="Lien vers cette définition">¶</a></dt>
+<dd><p>Met à jour l’état du jeu (logique de jeu).</p>
+</dd></dl>
+
+</dd></dl>
+
+<p id="module-utils2.generateur">Module Generateur qui implémente la classe Générateur, ses attributs et méthodes pour la génération d’objets.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="utils2.generateur.Generateur">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">utils2.generateur.</span></span><span class="sig-name descname"><span class="pre">Generateur</span></span><a class="headerlink" href="#utils2.generateur.Generateur" title="Lien vers cette définition">¶</a></dt>
+<dd><p>Bases : <code class="xref py py-class docutils literal notranslate"><span class="pre">Sprite</span></code></p>
+<p>Classe représentant le bouton générateur d’objets.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="utils2.generateur.Generateur.DISTANCE_OBJET">
+<span class="sig-name descname"><span class="pre">DISTANCE_OBJET</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">175</span></em><a class="headerlink" href="#utils2.generateur.Generateur.DISTANCE_OBJET" title="Lien vers cette définition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="utils2.generateur.Generateur.IMAGE_TAILLE">
+<span class="sig-name descname"><span class="pre">IMAGE_TAILLE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">128</span></em><a class="headerlink" href="#utils2.generateur.Generateur.IMAGE_TAILLE" title="Lien vers cette définition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="utils2.generateur.Generateur.NB_ITEM_LIGNE">
+<span class="sig-name descname"><span class="pre">NB_ITEM_LIGNE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">6</span></em><a class="headerlink" href="#utils2.generateur.Generateur.NB_ITEM_LIGNE" title="Lien vers cette définition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="utils2.generateur.Generateur.NB_ITEM_MAX">
+<span class="sig-name descname"><span class="pre">NB_ITEM_MAX</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">18</span></em><a class="headerlink" href="#utils2.generateur.Generateur.NB_ITEM_MAX" title="Lien vers cette définition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="utils2.generateur.Generateur.TAILLE_CADRE">
+<span class="sig-name descname"><span class="pre">TAILLE_CADRE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">163</span></em><a class="headerlink" href="#utils2.generateur.Generateur.TAILLE_CADRE" title="Lien vers cette définition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="utils2.generateur.Generateur.X_INITIAL">
+<span class="sig-name descname"><span class="pre">X_INITIAL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">96</span></em><a class="headerlink" href="#utils2.generateur.Generateur.X_INITIAL" title="Lien vers cette définition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="utils2.generateur.Generateur.X_INITIAL_CADRE">
+<span class="sig-name descname"><span class="pre">X_INITIAL_CADRE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">78.5</span></em><a class="headerlink" href="#utils2.generateur.Generateur.X_INITIAL_CADRE" title="Lien vers cette définition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="utils2.generateur.Generateur.Y_INITIAL">
+<span class="sig-name descname"><span class="pre">Y_INITIAL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">150</span></em><a class="headerlink" href="#utils2.generateur.Generateur.Y_INITIAL" title="Lien vers cette définition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="utils2.generateur.Generateur.Y_INITIAL_CADRE">
+<span class="sig-name descname"><span class="pre">Y_INITIAL_CADRE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">132.5</span></em><a class="headerlink" href="#utils2.generateur.Generateur.Y_INITIAL_CADRE" title="Lien vers cette définition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="utils2.generateur.Generateur.creation_objet">
+<span class="sig-name descname"><span class="pre">creation_objet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">liste_objets</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#utils2.generateur.Generateur.creation_objet" title="Lien vers cette définition">¶</a></dt>
+<dd><p>Crée un nouvel objet en privilégiant les emplacements libres.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>liste_objets (list): Liste contenant tous les objets du jeu</p>
+</dd>
+<dt>Returns:</dt><dd><p>Objet: L’objet créé ou None si la création a échouée</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="utils2.generateur.Generateur.getPos_x">
+<span class="sig-name descname"><span class="pre">getPos_x</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#utils2.generateur.Generateur.getPos_x" title="Lien vers cette définition">¶</a></dt>
+<dd><p>Retourne la position X du générateur.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type renvoyé<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></span></p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>int: Coordonnée X du générateur</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="utils2.generateur.Generateur.getPos_y">
+<span class="sig-name descname"><span class="pre">getPos_y</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#utils2.generateur.Generateur.getPos_y" title="Lien vers cette définition">¶</a></dt>
+<dd><p>Retourne la position Y du générateur.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type renvoyé<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></span></p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>int: Coordonnée Y du générateur</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="utils2.generateur.Generateur.get_grid_info">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_grid_info</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#utils2.generateur.Generateur.get_grid_info" title="Lien vers cette définition">¶</a></dt>
+<dd><p>Retourne les informations de positionnement pour la grille d’objets.</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>tuple: (X_INITIAL_CADRE, Y_INITIAL_CADRE, DISTANCE_OBJET, NB_ITEM_LIGNE, NB_ITEM_MAX)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="utils2.generateur.Generateur.marquer_emplacement_libre">
+<span class="sig-name descname"><span class="pre">marquer_emplacement_libre</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#utils2.generateur.Generateur.marquer_emplacement_libre" title="Lien vers cette définition">¶</a></dt>
+<dd><p>Marque un emplacement comme libre.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>x (int): Coordonnée X de l’emplacement
+y (int): Coordonnée Y de l’emplacement</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<p id="module-utils2.objets">Module objets qui implémente la classe Objet, ses attributs et ses méthodes.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="utils2.objets.Objet">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">utils2.objets.</span></span><span class="sig-name descname"><span class="pre">Objet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pos_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pos_y</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#utils2.objets.Objet" title="Lien vers cette définition">¶</a></dt>
+<dd><p>Bases : <code class="xref py py-class docutils literal notranslate"><span class="pre">Sprite</span></code></p>
+<p>Classe des objets (armes) dans le jeu.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="utils2.objets.Objet.IMAGE_TAILLE">
+<span class="sig-name descname"><span class="pre">IMAGE_TAILLE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">128</span></em><a class="headerlink" href="#utils2.objets.Objet.IMAGE_TAILLE" title="Lien vers cette définition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="utils2.objets.Objet.destruction">
+<span class="sig-name descname"><span class="pre">destruction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">liste_objets</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#utils2.objets.Objet.destruction" title="Lien vers cette définition">¶</a></dt>
+<dd><p>Détruit l’objet en le supprimant de la liste des objets.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type renvoyé<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span></p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Args:</dt><dd><p>liste_objets (list): Liste contenant tous les objets du jeu</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="utils2.objets.Objet.fusionner">
+<span class="sig-name descname"><span class="pre">fusionner</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">autre_objet</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">liste_objets</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#utils2.objets.Objet.fusionner" title="Lien vers cette définition">¶</a></dt>
+<dd><p>Fusionne cet objet avec un autre objet compatible.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type renvoyé<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></span></p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Args:</dt><dd><p>autre_objet (Objet): L’objet avec lequel fusionner
+liste_objets (list): Liste contenant tous les objets du jeu</p>
+</dd>
+<dt>Returns:</dt><dd><p>bool: True si la fusion a réussi, False sinon</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="utils2.objets.Objet.getNiveau">
+<span class="sig-name descname"><span class="pre">getNiveau</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#utils2.objets.Objet.getNiveau" title="Lien vers cette définition">¶</a></dt>
+<dd><p>Retourne le niveau de l’arme.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type renvoyé<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></span></p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>int: Niveau de l’arme (1-3)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="utils2.objets.Objet.getPos_x">
+<span class="sig-name descname"><span class="pre">getPos_x</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#utils2.objets.Objet.getPos_x" title="Lien vers cette définition">¶</a></dt>
+<dd><p>Retourne la position X de l’objet.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type renvoyé<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></span></p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>int: Coordonnée X de l’objet</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="utils2.objets.Objet.getPos_y">
+<span class="sig-name descname"><span class="pre">getPos_y</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#utils2.objets.Objet.getPos_y" title="Lien vers cette définition">¶</a></dt>
+<dd><p>Retourne la position Y de l’objet.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type renvoyé<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></span></p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>int: Coordonnée Y de l’objet</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="utils2.objets.Objet.getType">
+<span class="sig-name descname"><span class="pre">getType</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#utils2.objets.Objet.getType" title="Lien vers cette définition">¶</a></dt>
+<dd><p>Retourne le type de l’arme.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type renvoyé<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><a class="reference internal" href="#utils2.objets.Type" title="utils2.objets.Type"><code class="xref py py-class docutils literal notranslate"><span class="pre">Type</span></code></a></span></p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>Type: Type de l’arme (DISTANT ou CAC)</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="utils2.objets.Type">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">utils2.objets.</span></span><span class="sig-name descname"><span class="pre">Type</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">values</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#utils2.objets.Type" title="Lien vers cette définition">¶</a></dt>
+<dd><p>Bases : <code class="xref py py-class docutils literal notranslate"><span class="pre">Enum</span></code></p>
+<p>Classe des Types d’objets soit une arme de type corps à corps ou de type distance.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="utils2.objets.Type.CAC">
+<span class="sig-name descname"><span class="pre">CAC</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#utils2.objets.Type.CAC" title="Lien vers cette définition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="utils2.objets.Type.DISTANT">
+<span class="sig-name descname"><span class="pre">DISTANT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#utils2.objets.Type.DISTANT" title="Lien vers cette définition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<p id="module-pygame">Pygame is a set of Python modules designed for writing games.
+It is written on top of the excellent SDL library. This allows you
+to create fully featured games and multimedia programs in the python
+language. The package is highly portable, with games running on
+Windows, MacOS, OS X, BeOS, FreeBSD, IRIX, and Linux.</p>
+<dl class="py exception">
+<dt class="sig sig-object py" id="pygame.BufferError">
+<em class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pygame.</span></span><span class="sig-name descname"><span class="pre">BufferError</span></span><a class="headerlink" href="#pygame.BufferError" title="Lien vers cette définition">¶</a></dt>
+<dd><p>Bases : <a class="reference internal" href="#pygame.BufferError" title="pygame.BufferError"><code class="xref py py-class docutils literal notranslate"><span class="pre">BufferError</span></code></a></p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pygame.Overlay">
+<span class="sig-prename descclassname"><span class="pre">pygame.</span></span><span class="sig-name descname"><span class="pre">Overlay</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">format</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">size</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pygame.Overlay" title="Lien vers cette définition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="pygame.error">
+<em class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pygame.</span></span><span class="sig-name descname"><span class="pre">error</span></span><a class="headerlink" href="#pygame.error" title="Lien vers cette définition">¶</a></dt>
+<dd><p>Bases : <code class="xref py py-class docutils literal notranslate"><span class="pre">RuntimeError</span></code></p>
+</dd></dl>
+
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="#">Merge Game</a></h1>
+
+
+
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="#">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2025, Loïc FRANCOIS, Ayman HENNIA, Théo LAFFAGE.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 8.2.3</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+      |
+      <a href="_sources/index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
