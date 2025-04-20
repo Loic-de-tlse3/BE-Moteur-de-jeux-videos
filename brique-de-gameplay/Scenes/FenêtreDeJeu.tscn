@@ -18,4 +18,6 @@ x_initial = 180
 y_initial = 230
 taille_cadre = 163
 taille_objet = 128
+x_initial_cadre = 173
+y_initial_cadre = 228
 distance_objet = 175
