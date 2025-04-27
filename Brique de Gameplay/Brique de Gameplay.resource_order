@@ -22,7 +22,6 @@
     {"name":"xGenerer","order":4,"path":"objects/xGenerer/xGenerer.yy",},
     {"name":"xMelee1","order":3,"path":"objects/xMelee1/xMelee1.yy",},
     {"name":"Gameplay","order":1,"path":"rooms/Gameplay/Gameplay.yy",},
-    {"name":"Script1","order":2,"path":"scripts/Script1/Script1.yy",},
     {"name":"Brique","order":1,"path":"sprites/Brique/Brique.yy",},
     {"name":"CadreNull","order":4,"path":"sprites/CadreNull/CadreNull.yy",},
     {"name":"Distance1","order":3,"path":"sprites/Distance1/Distance1.yy",},
