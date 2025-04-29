@@ -1,0 +1,62 @@
+[gd_scene load_steps=6 format=3 uid="uid://ceqsejy7x6d7h"]
+
+[ext_resource type="Texture2D" uid="uid://cd3yj4rhwdvxg" path="res://Cadre.png" id="1_ofufm"]
+[ext_resource type="Texture2D" uid="uid://byy2educ4gu4p" path="res://Cadre null.png" id="2_ycdi5"]
+[ext_resource type="Script" path="res://static_body_2d.gd" id="3_6ottb"]
+[ext_resource type="Texture2D" uid="uid://ck26t0aoc7u3m" path="res://Bouton.png" id="3_mnc3g"]
+
+[sub_resource type="GDScript" id="GDScript_r1nga"]
+resource_name = "Base de gameplay"
+script/source = "extends Node2D
+
+var Niveau
+
+
+
+
+"
+
+[node name="Base" type="Node2D"]
+script = SubResource("GDScript_r1nga")
+
+[node name="Cadre" type="Sprite2D" parent="."]
+position = Vector2(578, 325)
+scale = Vector2(0.939542, 0.866667)
+texture = ExtResource("1_ofufm")
+
+[node name="CadreNull" type="Sprite2D" parent="."]
+position = Vector2(199, 227)
+texture = ExtResource("2_ycdi5")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="CadreNull" groups=["dropable"]]
+script = ExtResource("3_6ottb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CadreNull/StaticBody2D"]
+
+[node name="CadreNull2" type="Sprite2D" parent="." groups=["dropable"]]
+position = Vector2(199, 469)
+texture = ExtResource("2_ycdi5")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="CadreNull2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CadreNull2/StaticBody2D"]
+
+[node name="CadreNull3" type="Sprite2D" parent="."]
+position = Vector2(465, 471)
+texture = ExtResource("2_ycdi5")
+
+[node name="CadreNull4" type="Sprite2D" parent="."]
+position = Vector2(465, 227)
+texture = ExtResource("2_ycdi5")
+
+[node name="CadreNull5" type="Sprite2D" parent="."]
+position = Vector2(743, 465)
+texture = ExtResource("2_ycdi5")
+
+[node name="CadreNull6" type="Sprite2D" parent="."]
+position = Vector2(744, 228)
+texture = ExtResource("2_ycdi5")
+
+[node name="Bouton" type="Sprite2D" parent="."]
+position = Vector2(1064, 558)
+texture = ExtResource("3_mnc3g")

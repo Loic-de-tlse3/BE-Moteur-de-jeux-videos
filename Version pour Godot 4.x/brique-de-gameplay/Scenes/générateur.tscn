@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Projet BE images/Bouton.png" type="Texture2D" id=1]
+[ext_resource path="res://Scenes/objet.tscn" type="PackedScene" id=2]
+
+[node name="générateur" instance=ExtResource( 2 )]
+type = "générateur"
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource( 1 )

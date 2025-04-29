@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://bfln0tuy8tsjg"]
+
+[ext_resource type="Script" uid="uid://degix450koohi" path="res://scripts/tableau.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://w8i138ibupf6" path="res://Projet BE images/Cadre.png" id="2"]
+
+[node name="FenêtreDeJeu" type="Node2D"]
+
+[node name="fond d\'écran" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2")
+
+[node name="tableau" type="Node2D" parent="."]
+script = ExtResource("1")
+nb_item_ligne = 6
+nb_item_max = 18
+x_initial = 180
+y_initial = 230
+taille_cadre = 163
+taille_objet = 128
+x_initial_cadre = 173
+y_initial_cadre = 228
+distance_objet = 175
