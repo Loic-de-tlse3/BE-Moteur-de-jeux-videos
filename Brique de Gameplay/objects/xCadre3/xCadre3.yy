@@ -1,13 +1,9 @@
 {
   "$GMObject":"",
-  "%Name":"xDistance1",
-  "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":4,"eventType":6,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-  ],
+  "%Name":"xCadre3",
+  "eventList":[],
   "managed":true,
-  "name":"xDistance1",
+  "name":"xCadre3",
   "overriddenProperties":[],
   "parent":{
     "name":"Objets",
@@ -32,8 +28,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"Distance1",
-    "path":"sprites/Distance1/Distance1.yy",
+    "name":"CadreNiveau3",
+    "path":"sprites/CadreNiveau3/CadreNiveau3.yy",
   },
   "spriteMaskId":null,
   "visible":true,

@@ -1,6 +1,8 @@
-// Initialize drag to false so we don't drag until mouse is over our instance. 
-drag = false;
+identifiant =1;
 
-// Mouse x and y as we will be doing calculations
-mx = 0;
-my = 0;
+globalvar grab;
+globalvar selection;
+globalvar objet_selectionne;
+
+grab=false;
+selection = pointer_null;
