@@ -1,7 +1,7 @@
 if(grab){
 	instance_destroy();
 	instance_destroy(objet_selectionne);
-	instance_create_depth(x,y,-2,xDistance2);
+	instance_create_depth(x,y,-2,xMelee2);
 	grab=false;
 	instance_deactivate_object(selection);
 	
@@ -10,4 +10,3 @@ if(grab){
 	selection = instance_create_depth(x+18, y+18, 2, xSelection);
 	objet_selectionne = self;
 }
-
