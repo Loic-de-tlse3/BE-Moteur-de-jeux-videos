@@ -40,6 +40,8 @@ var objet2 = {
 	"objet": null
 }
 
+var nb_points = 0
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	randomize()
@@ -82,28 +84,36 @@ func pixels_vers_case(pixel_x, pixel_y):
 func toucher_item():
 	if Input.is_action_just_pressed("ui_interaction"):
 		objet1.coordonnees = get_global_mouse_position()
-		objet1.position_case = pixels_vers_case(objet1.coordonnees.x, objet1.coordonnees.y)
-		objet1.position_liste = objet1.position_case.x + (6 * objet1.position_case.y)
-		objet1.objet = liste_objets[objet1.position_liste]
-		if liste_objets[objet1.position_liste] == null:
-			return 0
-		elif liste_objets[objet1.position_liste].type == "générateur":
-			var emplacement = premiere_case_vide()
-			if emplacement == -1:
-				print("Plus de place")
-				return 1
-			var nouvel_objet = liste_objets[objet1.position_liste].generation(self, objets, emplacement)
-			liste_objets[emplacement] = nouvel_objet
-			return 0
+		if (objet1.coordonnees.x < x_initial*6) and (objet1.coordonnees.x > x_initial/2) and (objet1.coordonnees.y < y_initial*2.9) and (objet1.coordonnees.y > y_initial/2):
+			objet1.position_case = pixels_vers_case(objet1.coordonnees.x, objet1.coordonnees.y)
+			objet1.position_liste = objet1.position_case.x + (6 * objet1.position_case.y)
+			objet1.objet = liste_objets[objet1.position_liste]
+			if liste_objets[objet1.position_liste] == null:
+				return 0
+			elif liste_objets[objet1.position_liste].type == "générateur":
+				var emplacement = premiere_case_vide()
+				if emplacement == -1:
+					print("Plus de places disponibles")
+					return 1
+				var nouvel_objet = liste_objets[objet1.position_liste].generation(self, objets, emplacement)
+				liste_objets[emplacement] = nouvel_objet
+				return 0
+			objet1.objet.sprite.scale = Vector2(1.2, 1.2)
+		
 	if Input.is_action_just_released("ui_interaction"):
 		objet2.coordonnees = get_global_mouse_position()
-		objet2.position_case = pixels_vers_case(objet2.coordonnees.x, objet2.coordonnees.y)
-		objet2.position_liste = objet2.position_case.x + (6 * objet2.position_case.y)
-		objet2.objet = liste_objets[objet2.position_liste]
-		if (objet1.objet != null) and (objet2.objet != null):
-			objet2.objet.fusion(liste_objets, objet1)
-		else:
-			print("Fusion impossible")
+		if (objet2.coordonnees.x < x_initial*6) and (objet2.coordonnees.x > x_initial/2) and (objet2.coordonnees.y < y_initial*2.9) and (objet2.coordonnees.y > y_initial/2):
+			#print("objet 1 : ", objet1.coordonnees, " | objet 2 : ", objet2.coordonnees)
+			objet2.position_case = pixels_vers_case(objet2.coordonnees.x, objet2.coordonnees.y)
+			objet2.position_liste = objet2.position_case.x + (6 * objet2.position_case.y)
+			objet2.objet = liste_objets[objet2.position_liste]
+			#print("objet 1 : ", objet1.position_liste, " | objet 2 : ", objet2.position_liste)
+			if (objet1.objet != null) and (objet2.objet != null and objet1.objet.type != "générateur" and objet2.objet.type != "générateur"):
+				nb_points += objet2.objet.fusion(liste_objets, objet1)
+				# print("nombre de points aquis : ", nb_points)
+			else:
+				print("Fusion impossible")
+			objet1.objet.sprite.scale = Vector2(1, 1)
 		
 func premiere_case_vide():
 	for i in range(nb_item_max):
