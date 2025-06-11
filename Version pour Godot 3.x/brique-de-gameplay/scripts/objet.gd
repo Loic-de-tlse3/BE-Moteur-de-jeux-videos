@@ -5,11 +5,14 @@ enum Type {
 	MELE
 }
 
+# Chargement du sprite afin de changer son image plus tard
 onready var sprite = $Sprite
 
+# Variable d'objet initialisé en dehors du code
 export (String) var type
 export (int) var niveau
 
+# Chargement des images utilisées dans la fonction de fusion
 var textures_distance = [
 	load("res://Projet BE images/gun.png"),
 	load("res://Projet BE images/rifle.png"),
@@ -22,36 +25,38 @@ var textures_melee = [
 	load("res://Projet BE images/spears.png")
 ]
 
-#var tableau_instance = preload("res://Scenes/FenêtreDeJeu.tscn").instance()
 
-# Called when the node enters the scene tree for the first time.
+# Appelé lorsque le noeud entre l'arbre de scène la première fois, ne fait rien dans ce programme
 func _ready():
-	#changement_image()
-	pass # Replace with function body.
+	pass
 	
 func generation(tableau, objets_possibles, emplacement):
 	var nouvel_objet = null
-	if randi()%2 == Type.DISTANCE:
+	if randi()%2 == Type.DISTANCE: # Génère une arme distance ou mêlée en fonction du résultat aléatoire obtenu
 		nouvel_objet = objets_possibles[0].instance()
 	else:
 		nouvel_objet = objets_possibles[1].instance()
 	add_child(nouvel_objet)
 	nouvel_objet.position = case_vers_pixels(tableau, emplacement)
 	nouvel_objet.niveau = 1
-	return nouvel_objet
+	return nouvel_objet # Renvoie l'instance du nouvel objet créé
+	
+func get_sprite_texture():
+	return sprite.texture
 	
 func fusion(liste_objets, second_objet):
 	if (niveau < 3) and (self.type == second_objet.objet.type) and (self != second_objet.objet) and (self.niveau == second_objet.objet.niveau): 
 		niveau += 1
-		liste_objets[second_objet.position_liste] = null
+		liste_objets[second_objet.position_liste] = null # Vide la case contenant l'autre objet (le premier sélectionné)
 		changement_image()
-		second_objet.objet.queue_free()
+		second_objet.objet.queue_free() # Détruit le premier objet sélectionné
+		
+		# Renvoie des points obtenus en fonction du niveau de la fusion
 		if niveau == 3:
 			return 100
 		elif niveau == 2:
 			return 50
 	else:
-		print("Fusion impossible")
 		return 0
 	
 func case_vers_pixels(tableau, case:int):
@@ -59,6 +64,7 @@ func case_vers_pixels(tableau, case:int):
 	var y = tableau.distance_objet*(case/tableau.nb_item_ligne)
 	return Vector2(x, y)
 	
+# Change l'image du sprite en fonction de son nouveau niveau après fusion
 func changement_image():
 	if niveau >= 0 and niveau <= textures_distance.size():
 		if type == "distance":
@@ -67,7 +73,3 @@ func changement_image():
 			sprite.texture = textures_melee[niveau-1]
 	else:
 		print("niveau imprévu")
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
